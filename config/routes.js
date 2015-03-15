@@ -35,12 +35,13 @@ module.exports.routes = {
   '/': {
     view: 'index'
   },
+  '/admin': {
+    view: 'admin'
+  },
   '/thank-you': {
     view: 'thank-you'
   },
-  '/admin': {
-    view: 'admin'
-  }
+  'post /rsvp': 'RsvpController.rsvp'
 
   /***************************************************************************
   *                                                                          *

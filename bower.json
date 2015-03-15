@@ -1,0 +1,21 @@
+{
+  "name": "easter",
+  "version": "0.0.0",
+  "homepage": "https://github.com/louiswilbrink/easter",
+  "authors": [
+    "Louis Wilbrink <louis.wilbrink@gmail.com>"
+  ],
+  "description": "highrock easter RSVP site",
+  "main": "index.ejs",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.2"
+  }
+}
