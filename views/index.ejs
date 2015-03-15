@@ -163,25 +163,33 @@
           var service = $('#firstServiceCheckbox').prop('checked') ||
                         $('#secondServiceCheckbox').prop('checked') ||
                         $('#thirdServiceCheckbox').prop('checked');
+
+          var isInvalid = false;
+
           if (!service) {
               event.preventDefault();
               $('.service-select').css('color', 'red');
               $('.service-select').html('Please select a service time:');
+              isInvalid = true;
           }
 
           if ($('#name').val() == '') {
               event.preventDefault();
               $('.name-label').css('color', 'red');
               $('.name-label').html('Please enter your name:');
+              isInvalid = true;
           }
 
           if ($('#email').val() == '') {
               event.preventDefault();
               $('.email-label').css('color', 'red');
               $('.email-label').html('Please enter your name:');
+              isInvalid = true;
           }
 
-          location.hash = 'form-top';
+          if (isInvalid) {
+              location.hash = 'form-top';
+          }
       });
     </script>
 </html>
