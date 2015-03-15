@@ -51,11 +51,27 @@ body {
     margin-top: 50px;
 }
 
+.info {
+    display: inline-block;
+    @media screen and (max-width: @break-small) {
+        display: block;
+    }
+}
+
+.separator {
+    padding-left: 12px;
+    padding-right: 12px;
+    @media screen and (max-width: @break-small) {
+        display: none;
+    }
+}
+    
+
 .sub-title {
     font-family: 'Raleway', sans-serif;
     font-size: 18px;
     font-weight: 300;
-    color: #75838f;
+    color: #1A1A1A;
     margin-bottom: 20px;
 }
 
