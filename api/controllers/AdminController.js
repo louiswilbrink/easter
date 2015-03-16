@@ -5,10 +5,13 @@
  * @help        :: See http://links.sailsjs.org/docs/controllers
  */
 
+var util = require('util');
+var utils = require('../services/utils');
+
 module.exports = {
 
-    index: function (req, res) {
-        res.view('admin', { name: 'louis' });
+    admin: function (req, res) {
+        res.view('admin', { name: utils.getRsvpCount() });
     }
 };
 
