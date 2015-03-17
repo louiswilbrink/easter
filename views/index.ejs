@@ -2,6 +2,9 @@
     <div class="jumbotron">
         <div class="overlay">
             <div class="title" style="margin-top: 20px;">Highrock Easter Celebration</div>
+            <p>Guests: <%= services.first.isFull %></p>
+            <p>Guests: <%= services.second.isFull %></p>
+            <p>Guests: <%= services.third.isFull %></p>
             <div class="sub-title info" style="margin-bottom: 0px;">Arlington Town Hall</div><div class="separator info"> | </div><div class="sub-title info">Sunday, April 5, 2015</div>
             <div class="sub-title">730 Massachusetts Ave, Arlington, MA 02476, USA</div>
         </div>
@@ -26,9 +29,34 @@
             <h1 class="title">Worship Services</h1>
             <div class="sub-title service-select">Select a time:</div>
             <div class="service-times">
-                <div id="firstService">8:30AM</div>
-                <div id="secondService">11:00AM</div>
-                <div id="thirdService">1:30AM</div>
+                <div <% if(!services.first.isFull) { %> id="firstService" <% } %> 
+                    class="service-container
+                    <% if(!services.first.isFull) { %> enabled"> <% } %>
+                    <% if(services.first.isFull) { %> disabled"> <% } %>
+                        <div class="time-solo">8:30AM</div>
+                        <% if(services.first.isFull) { %>
+                        <div class="capacity-label">[ at capacity ]</div>
+                        <% } %>
+                </div>
+                <div <% if(!services.second.isFull) { %> id="secondService" <% } %> 
+                    class="service-container
+                    <% if(!services.second.isFull) { %> enabled"> <% } %>
+                    <% if(services.second.isFull) { %> disabled"> <% } %>
+                        <div class="time-solo">11:00AM</div>
+                        <% if(services.second.isFull) { %>
+                        <div class="capacity-label">[ at capacity ]</div>
+                        <% } %>
+                </div>
+                <div <% if(!services.third.isFull) { %> id="thirdService" <% } %> 
+                    class="service-container
+                    <% if(!services.third.isFull) { %> enabled"> <% } %>
+                    <% if(services.third.isFull) { %> disabled"> <% } %>
+                        <div class="time-solo">1:30PM</div>
+                        <% if(services.third.isFull) { %>
+                        <div class="capacity-label">[ at capacity ]</div>
+                        <% } %>
+                </div>
+                <p>We are at capacity for reserved seats, however we have allotted 150 seats per service for walk-in guests.  If you have any questions, please email info@highrock.org</p>
             </div>
             <div class="checkbox hidden">
                 <label><input id="firstServiceCheckbox" name="firstService" type="checkbox">8:30AM</label>

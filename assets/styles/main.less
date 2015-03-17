@@ -9,6 +9,14 @@ body {
     padding-bottom: 40px;
 }
 
+.blue {
+    background-color: blue;
+}
+
+.red {
+    background-color: red;
+}
+
 .landing-page {
     .jumbotron {
         background-image: url('https://s3.amazonaws.com/highrock-easter/easter-reservation-image.png');
@@ -77,21 +85,45 @@ body {
 
 .service-times {
     display: inline-block;
-    >div {
-        display: inline-block;
-        width: 150px;
-        height: 80px;
+    .enabled {
         background-color: #C6CFEC;
-        font-family: 'Raleway', sans-serif;
-        font-size: 18px;
-        font-weight: 300;
         color: white;
-        line-height: 80px;
-        margin-bottom: 2px;
+        border: #C6CFEC 1px solid;
+        font-size: 18px;
         &:hover {
             background-color: rgba(255, 64, 129, 1);
             cursor: pointer;
         }
+    }
+    .service-container {
+        display: inline-block;
+        height: 80px;
+        width: 150px;
+        position: relative;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 300;
+        margin-bottom: 2px;
+        .time-solo {
+            position: absolute;
+            width: 150px;
+            top: 24px;
+        }
+        .time-paired {
+            position: absolute;
+            width: 150px;
+            top: 20px;
+        }
+        .capacity-label {
+            position: absolute;
+            bottom: 20px;
+            width: 150px;
+        }
+    }
+    .disabled {
+        background-color: white;
+        border: black 1px solid;
+        color: black;
+        font-size: 14px;
     }
     >.selected {
         background-color: rgba(255, 64, 129, 1);
