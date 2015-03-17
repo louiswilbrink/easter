@@ -11,7 +11,13 @@ var utils = require('../services/utils');
 module.exports = {
 
     admin: function (req, res) {
-        res.view('admin', { name: utils.getRsvpCount() });
+
+        var viewData = {};
+
+        utils.getRsvpCount().done(function (rsvps) {
+            viewData.rsvps = rsvps;
+            res.view('admin', viewData);
+        });
     }
 };
 
