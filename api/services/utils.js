@@ -19,13 +19,28 @@ module.exports = {
             var rsvps = snapshot.val();
             
             // [first, second, third] service.
-            var guests = [0, 0, 0]
+            var guests = [0, 0, 0];
+            var infants = [0, 0];
+            var preschoolers = [0, 0];
+            var children = [0, 0];
 
             _.each(rsvps, function (rsvp) {
                 guests[rsvp.service - 1] += rsvp.guests;
+                if (rsvp.childService !== 0) {
+                    infants[rsvp.childService - 1] += rsvp.infants;
+                    preschoolers[rsvp.childService - 1] += rsvp.preschoolers;
+                    children[rsvp.childService - 1] += rsvp.children;
+                }
             });
+
+            var allCount = {
+                guests: guests,
+                infants: infants,
+                preschoolers: infants,
+                children: children
+            };
             
-            count.resolve(guests);
+            count.resolve(allCount);
         });
 
         return count.promise;
