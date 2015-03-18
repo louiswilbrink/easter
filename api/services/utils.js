@@ -36,7 +36,7 @@ module.exports = {
             var allCount = {
                 guests: guests,
                 infants: infants,
-                preschoolers: infants,
+                preschoolers: preschoolers,
                 children: children
             };
             

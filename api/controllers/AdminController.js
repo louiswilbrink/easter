@@ -16,6 +16,10 @@ module.exports = {
 
         utils.getRsvpCount().done(function (rsvps) {
             viewData.guests = rsvps.guests;
+            viewData.infants = rsvps.infants;
+            viewData.preschoolers = rsvps.preschoolers;
+            viewData.children = rsvps.children;
+
             res.view('admin', viewData);
         });
     }
