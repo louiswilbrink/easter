@@ -6,7 +6,7 @@
 }
 
 body {
-    padding-bottom: 40px;
+    /*padding-bottom: 40px;*/
 }
 
 .blue {
@@ -28,6 +28,24 @@ body {
             background-color: rgba(255,255,255,0.8) !important;
             padding-top: 30px;
             padding-bottom: 30px;
+        }
+    }
+}
+
+.admin-page {
+    >.jumbotron {
+        background-image: url('https://s3.amazonaws.com/highrock-easter/easter-reservation-image.png');
+        background-position: center;
+        background-size: cover;
+        padding: 0%;
+        height: 100%;
+        width: 100%;
+        >.overlay {
+            background-color: rgba(255,255,255,0.8) !important;
+            padding-top: 30px;
+            padding-bottom: 90px;
+            height: 100%;
+            width: 100%;
         }
     }
 }
@@ -81,6 +99,10 @@ body {
     font-weight: 300;
     color: #1A1A1A;
     margin-bottom: 20px;
+}
+
+.last-line-padding {
+    padding-bottom: 40px;
 }
 
 .service-times {
@@ -174,17 +196,41 @@ body {
     margin-top: 50px;
 }
 
-.service-guests {
-    >div {
-        height: 120px;
-        width: 120px;
-        border-radius: 60px 60px 60px 60px;
-        display: inline-block;
-        background-color: pink;
-        line-height: 120px;
-        font-family: 'Raleway', sans-serif;
-        font-size: 64px;
-        font-weight: 300;
+.admin-services {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    width: 300px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    >.service-label {
+        position: absolute;
+        top: 3px;
+        right: 3px;
+        color: white;
+    }
+    >.guests {
+        background-color: #ff4081;
+        color: white;
+        padding: 20px;
+        >.guest-count {
+            font-size: 64px;
+        }
+        >.guest-label {
+            font-size: 20px;
+        }
+    }
+    >.children-services {
+        background-color: #C6CFEC;
+        color: white;
+        >div {
+            display: inline-block;
+            padding: 10px;
+            >.kid-count {
+                font-size: 20px;
+            }
+        }
     }
 }
 

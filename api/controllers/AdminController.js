@@ -15,7 +15,7 @@ module.exports = {
         var viewData = {};
 
         utils.getRsvpCount().done(function (rsvps) {
-            viewData.rsvps = rsvps;
+            viewData.guests = rsvps.guests;
             res.view('admin', viewData);
         });
     }
